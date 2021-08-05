@@ -8,9 +8,9 @@ const noise4 = '../samples/Fx_04.wav';
 const noise5 = '../samples/Fx_05.wav';
 const noise6 = '../samples/Fx_06.wav';
 
-const eq = new Tone.EQ3(1.3, 1.2, 0.8);
-const reverb = new Tone.Reverb(0.2);
-const gain = new Tone.Gain(2.2);
+const eq = new Tone.EQ3(1.3, 1.4, 0.8);
+const reverb = new Tone.Reverb(0.4);
+const gain = new Tone.Gain(2.5);
 
 export const sampleMap = {
   'Kick Drum': '../samples/Kick_01.wav',

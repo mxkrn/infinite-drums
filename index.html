@@ -4,30 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- You need to bring your own Tone.js for the player, and tfjs for the model -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.8.21/Tone.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.44/Tone.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/1.2.8/tf.min.js"></script>
-  <!-- Core library, since we're going to use a player -->
   <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0/es6/core.js"></script>
-  <!--Model we want to use -->
   <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0/es6/music_vae.js"></script>
 
-  <title>Magenta Demo</title>
+  <title>Regroove Demo</title>
   <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
   <canvas id="cables-canvas" width="100vw" height="100vh"></canvas>
   <header class="header">
-    <img src="./img/Logo_v1.svg" class="logo">
+    <img src="./img/regroove-republika.png" class="logo">
   </header>
   <footer class="footer">
     <div class="button-wrapper">
-      <button class="button" type="button" onclick="window.next()">→ Next</button>
+      <button class="button" type="button" onclick="window.next()" style="border-style: hidden;">
+        <img src="./img/shuffle.png" class="control-button">
+      </button>
+      <button class="button" type="button" onclick="window.playPause()" style="border-style: hidden;">
+        <img src="./img/play-pause.png" class="control-button">
+      </button>
     </div>
+    <div class="bottom-row"></div>
+    <!-- <div class="bottom-row">
+      <a href="https://twitter.com/_maxkraan" target="_blank">model by @_maxkraan</a>
+    </div> -->
     <div class="bottom-row">
-      <a href="https://twitter.com/TimPulvr" target="_blank">@TimPulvr</a>
+      <a href="https://twitter.com/timpulvr" target="_blank">viz by @timpulvr</a>
     </div>
+    <div class="bottom-row"></div>
   </footer>
 
     <libs/>

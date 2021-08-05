@@ -53,8 +53,8 @@ let currentPart = null;
  */
 function createOneHotNoteArr(items) {
   const sampleNames = Object.keys(sampleMap);
-  const numRowsInCables = 6;
-  const totalSteps = 32; // 2m
+  const numRowsInCables = 9;
+  const totalSteps = 16; // 2m
   const arr = [];
   for(let i=0; i<sampleNames.length; i++) {
     for (let j=0; j<totalSteps; j++) {
@@ -120,26 +120,26 @@ const part = new Tone.Part(((time, value) => {
   { time: '0:3:1', step: 13 },
   { time: '0:3:2', step: 14 },
   { time: '0:3:3', step: 15 },
-  { time: '1:0:0', step: 16 },
-  { time: '1:0:1', step: 17 },
-  { time: '1:0:2', step: 18 },
-  { time: '1:0:3', step: 19 },
-  { time: '1:1:0', step: 20 },
-  { time: '1:1:1', step: 21 },
-  { time: '1:1:2', step: 22 },
-  { time: '1:1:3', step: 23 },
-  { time: '1:2:0', step: 24 },
-  { time: '1:2:1', step: 25 },
-  { time: '1:2:2', step: 26 },
-  { time: '1:2:3', step: 27 },
-  { time: '1:3:0', step: 28 },
-  { time: '1:3:1', step: 29 },
-  { time: '1:3:2', step: 30 },
-  { time: '1:3:3', step: 31 },
+//   { time: '1:0:0', step: 16 },
+//   { time: '1:0:1', step: 17 },
+//   { time: '1:0:2', step: 18 },
+//   { time: '1:0:3', step: 19 },
+//   { time: '1:1:0', step: 20 },
+//   { time: '1:1:1', step: 21 },
+//   { time: '1:1:2', step: 22 },
+//   { time: '1:1:3', step: 23 },
+//   { time: '1:2:0', step: 24 },
+//   { time: '1:2:1', step: 25 },
+//   { time: '1:2:2', step: 26 },
+//   { time: '1:2:3', step: 27 },
+//   { time: '1:3:0', step: 28 },
+//   { time: '1:3:1', step: 29 },
+//   { time: '1:3:2', step: 30 },
+//   { time: '1:3:3', step: 31 },
 ]);
 
 Tone.Transport.loopStart = 0;
-Tone.Transport.loopEnd = '2m';
+Tone.Transport.loopEnd = '1m';
 Tone.Transport.loop = true;
 Tone.Transport.start(0);
 part.start(0)
@@ -154,7 +154,7 @@ function stepToTransportTime(step){
   const bars = Math.floor(step / 16);
   let rest = step % 16;
   const quarters = Math.floor(rest / 4);
-  const sixteenth = rest % 4;
+  const sixteenth = step % 4;
   return `${bars}:${quarters}:${sixteenth}`;
 }
 
