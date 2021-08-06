@@ -1,29 +1,20 @@
-// The keys of the sample map must match the names in midi-map.js
-// let audioSamplesLoaded = false;
-
-const noise1 = '../samples/Fx_01.wav';
-const noise2 = '../samples/Fx_02.wav';
-const noise3 = '../samples/Fx_03.wav';
-const noise4 = '../samples/Fx_04.wav';
-const noise5 = '../samples/Fx_05.wav';
-const noise6 = '../samples/Fx_06.wav';
-
-const eq = new Tone.EQ3(1.3, 1.4, 0.8);
-const reverb = new Tone.Reverb(0.4);
+const eq = new Tone.EQ3(1.0, 1.4, 0.8);
 const gain = new Tone.Gain(2.5);
+const reverb = new Tone.Reverb(0.2);
+const crush = new Tone.BitCrusher(9);
 
 export const sampleMap = {
-  'Kick Drum': '../samples/Kick_01.wav',
-  'Snare Drum': '../samples/Snare_01.wav',
-  'Hi-Hat Closed': '../samples/HiHat_01.wav',
-  'Hi-Hat Open': noise1,
-  'High Tom': noise5, 
-  'High-Mid Tom': noise2,
-  'Low Tom': noise6,
-  'Crash Cymbal': noise3,
-  'Ride Cymbal': noise4,
+  'Kick Drum': '../samples/808/kick.wav',
+  'Snare Drum': '../samples/808/snare.wav',
+  'Hi-Hat Closed': '../samples/808/hh.wav',
+  'Hi-Hat Open': '../samples/808/oh.wav',
+  'High Tom': '../samples/808/ht.wav', 
+  'High-Mid Tom': '../samples/808/mt.wav',
+  'Low Tom': '../samples/808/lt.wav',
+  'Crash Cymbal': '../samples/808/cym.wav',
+  'Ride Cymbal': '../samples/808/rim.wav',
 }; 
 
-export const players = new Tone.Players (sampleMap).chain(reverb, eq, gain, Tone.Destination);
+export const players = new Tone.Players (sampleMap).chain(eq, crush, gain, reverb, Tone.Destination);
 
 // export const getAudioSamplesLoaded = players.loaded;
