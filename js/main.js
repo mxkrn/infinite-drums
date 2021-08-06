@@ -74,11 +74,9 @@ function activateMagentaSample(index) {
   if (currentPart) { currentPart.stop(); }
   const { part, items } = createPartFromSample(currentSample);
   currentPart = part;
-  currentPart.start('+0');
-  // Tone.Draw.schedule(function(){
-  //   //do drawing or DOM manipulation here
-  //   CABLES.patch.setVariable('step', value.step);
-  // }, time)
+  currentPart.start(0);
+
+  // fill cables matrix with note arr
   const arr = createOneHotNoteArr(items);
   CABLES.patch.setVariable('noteOnArr', arr);
 }
@@ -86,6 +84,19 @@ function activateMagentaSample(index) {
 window.next = () => {
   activateMagentaSample(currentSampleIndex + 1);
 };
+
+let playing = true;
+window.playPause = () => {
+  if (playing) {
+    Tone.Transport.stop(0);
+    currentPart.stop(0);
+    playing = false;
+  } else {
+    Tone.Transport.start(0);
+    currentPart.start(0);
+    playing = true;
+  }
+}
 
 // Each bundle exports a global object with the name of the bundle.
 // const player = new core.Player();
@@ -142,6 +153,7 @@ Tone.Transport.loopStart = 0;
 Tone.Transport.loopEnd = '1m';
 Tone.Transport.loop = true;
 Tone.Transport.start(0);
+Tone.Transport.bpm.value = 140;
 part.start(0)
 
 /**
