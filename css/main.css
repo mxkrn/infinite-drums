@@ -116,7 +116,7 @@ a:hover {
 }
 
 .logo {
-  width:10em;
+  width:8em;
   height: auto;
   opacity: 1;
 }
@@ -149,4 +149,9 @@ a:hover {
 .dropdown-button {
   background-color: #343434 !important;
   color: #918a7f;
+}
+
+/* Socials */
+.fa {
+  font-size: 20px;
 }
