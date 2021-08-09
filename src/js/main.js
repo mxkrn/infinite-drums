@@ -104,9 +104,9 @@ window.playPause = () => {
   }
 };
 
-// Each bundle exports a global object with the name of the bundle.
-// const player = new core.Player();
-//...
+/*
+ * Model
+ */
 const mvae = new music_vae.MusicVAE(
   "https://storage.googleapis.com/magentadata/js/checkpoints/music_vae/drums_2bar_lokl_small"
 );
@@ -201,6 +201,7 @@ function createPartFromSample(sample) {
     return;
   }
   const { notes } = sample;
+  console.log(sample);
   const partItems = notes.map((note) => {
     return {
       time: stepToTransportTime(note.quantizedStartStep),

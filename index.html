@@ -13,7 +13,7 @@
 
   <title>Regroove Demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./src/assets/css/main.css">
 </head>
 <body>
   <canvas id="cables-canvas" width="100vw" height="100vh"></canvas>
@@ -46,7 +46,7 @@
 
         <div class="col-4">
           <a href="https://rekoil.io/">
-            <img src="./img/logo.png" class="logo img-fluid mx-auto d-block">
+            <img src="./src/assets/img/logo.png" class="logo img-fluid mx-auto d-block">
           </a>
         </div>
 
@@ -80,12 +80,12 @@
     <div class="row mt-5 justify-content-center">
       <div class="col-2 text-center">
         <button class="button" type="button" onclick="window.next()" style="border-style: hidden;">
-          <img src="./img/shuffle.png" class="control-button">
+          <img src="./src/assets/img/shuffle.png" class="control-button">
         </button>
       </div>
       <div class="col-2 text-center">
         <button class="button" type="button" onclick="window.playPause()" style="border-style: hidden;">
-          <img src="./img/play-pause.png" class="control-button">
+          <img src="./src/assets/img/play-pause.png" class="control-button">
         </button>
       </div>
       </div>
@@ -101,9 +101,10 @@
   </footer>
 
   <libs/>
-  <script type="text/javascript" src="./cables/js/patch.js" async></script>
+  <script type="text/javascript" src="./src/cables/js/patch.js" async></script>
   <corelibs/>
 
-  <script src="./js/main.js" async type="module"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script> -->
+  <script src="./src/js/main.js" async type="module"></script>
 </body>
 </html>
