@@ -1,16 +1,19 @@
 import midiMap from "./midi-map.js";
 import { players, sampleMap } from "./players.js";
 import "./audio-context.js";
+import * as Tone from "tone";
+import * as Regroove from "regroovejs";
 
-/**
+/*
  * Nomenclature:
  *   - Sample: Magenta sample object
  *   - Audio Sample: e.g. kick drum sound
  */
 
-console.log("Start...");
-
-// called on cables error
+/* ================================================================
+ * Cables
+ * ================================================================
+ */
 function showError(errId, errMsg) {
   alert("An error occured: " + errId + ", " + errMsg);
 }
@@ -26,9 +29,9 @@ function patchFinishedLoading() {
 }
 
 document.addEventListener("CABLES.jsLoaded", function (event) {
-  CABLES.patch = new CABLES.Patch({
+  CABLES.patch = new window.CABLES.Patch({
     patch: CABLES.exportedPatch,
-    prefixAssetPath: "",
+    prefixAssetPath: "cables/",
     glCanvasId: "cables-canvas",
     glCanvasResizeToWindow: true,
     onError: showError,
@@ -201,7 +204,6 @@ function createPartFromSample(sample) {
     return;
   }
   const { notes } = sample;
-  console.log(sample);
   const partItems = notes.map((note) => {
     return {
       time: stepToTransportTime(note.quantizedStartStep),

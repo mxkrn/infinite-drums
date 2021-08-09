@@ -1,20 +1,31 @@
 {
-  "name": "cables-pure-app",
+  "name": "regroove-web",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "load-cables": "npx cables --export 59Cx3g -d cables --combine-js",
-    "serve": "npx live-server"
+    "load-cables": "rm -rf src/cables/* && cables --export HUq7lI -d 'src/cables' -c -i",
+    "serve": "npm run build && npx live-server",
+    "build": "npx webpack"
   },
   "keywords": [],
   "author": "Tim Pulver <git@timpulver.de>",
   "license": "MIT",
-  "dev-dependencies": {
-    "@cables/cables": "0.8.0",
-    "live-server": "1.2.1"
-  },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "@cables/cables": "0.8.0",
+    "browserfs": "^1.4.3",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "live-server": "1.2.1",
+    "prettier": "^2.3.2",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "regroovejs": "^0.1.0-b",
+    "tone": "^14.7.77",
+    "util": "^0.12.4"
   }
 }

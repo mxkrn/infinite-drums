@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.44/Tone.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/1.2.8/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0/es6/core.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0/es6/music_vae.js"></script>
@@ -100,11 +99,9 @@
     <div class="bottom-row"></div>
   </footer>
 
+  <script src="./dist/bundle.min.js" async type="module"></script>
   <libs/>
-  <script type="text/javascript" src="./src/cables/js/patch.js" async></script>
+  <script type="text/javascript" src="./dist/cables/patch.js" async></script>
   <corelibs/>
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script> -->
-  <script src="./src/js/main.js" async type="module"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+import * as Tone from 'tone';
+
 const eq = new Tone.EQ3(1.0, 1.4, 0.8);
 const gain = new Tone.Gain(2.5);
 const reverb = new Tone.Reverb(0.2);
