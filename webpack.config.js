@@ -22,7 +22,8 @@ module.exports = () => {
         'bufferGlobal': 'browserfs/dist/shims/bufferGlobal.js',
         'bfsGlobal': require.resolve('browserfs'),
         'tone': require.resolve('tone'),
-        'util': require.resolve('util/')
+        'util': require.resolve('util/'),
+        'assert': require.resolve('assert/')
       }
     },
     module: {
@@ -33,10 +34,11 @@ module.exports = () => {
         patterns: [
           { from: 'node_modules/onnxruntime-web/dist/*.wasm', to: '[name][ext]'},
           { from: 'src/cables', to: 'cables/[name][ext]' },
+          { from: 'regroove-models/staging', to: 'regroove-models/[name][ext]' }
         ]
       }),
       new ProvidePlugin({
-        BrowserFS: 'bfsGlobal', process: 'processGlobal'
+        BrowserFS: 'bfsGlobal', process: 'processGlobal', Buffer: 'bufferGlobal'
       })
     ],
     mode: 'production',
