@@ -1,9 +1,9 @@
 import * as Tone from 'tone';
 
-const eq = new Tone.EQ3(1.0, 1.4, 0.8);
-const gain = new Tone.Gain(2.5);
-const reverb = new Tone.Reverb(0.2);
-const crush = new Tone.BitCrusher(9);
+const eq = new Tone.EQ3(0.8, 1.2, 0.8);
+const gain = new Tone.Gain(2);
+const reverb = new Tone.Reverb(0.15);
+const crush = new Tone.BitCrusher(10);
 
 export const sampleMap = {
   "Kick Drum": "./src/assets/samples/808/kick.wav",

@@ -13,6 +13,9 @@ module.exports = () => {
         type: 'umd'
       }
     },
+    optimization: {
+      minimize: false
+    },
     resolve: {
       alias: {
         'fs': 'browserfs/dist/shims/fs.js',
@@ -33,8 +36,7 @@ module.exports = () => {
       new CopyPlugin({
         patterns: [
           { from: 'node_modules/onnxruntime-web/dist/*.wasm', to: '[name][ext]'},
-          { from: 'src/cables', to: 'cables/[name][ext]' },
-          { from: 'regroove-models/staging', to: 'regroove-models/[name][ext]' }
+          { from: 'src/cables', to: 'cables/[name][ext]' }
         ]
       }),
       new ProvidePlugin({
