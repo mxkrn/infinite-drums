@@ -12,7 +12,7 @@
   "author": "Tim Pulver <git@timpulver.de>",
   "license": "MIT",
   "devDependencies": {
-    "@cables/cables": "0.8.0",
+    "@cables/cables": "^0.8.0",
     "browserfs": "^1.4.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^9.0.1",

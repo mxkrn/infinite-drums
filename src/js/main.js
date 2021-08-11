@@ -5,18 +5,7 @@ import { ONNXModel, Pattern } from "regroovejs";
 import "./audio-context.js";
 import { players, sampleMap } from "./players.js";
 import midiMap from './midi-map.js';
-console.log(DRUM_PITCH_CLASSES);
-// import modelMeta from "/regroove-models/staging/syncopate.json";
 
-
-/* BrowserFS */
-// BrowserFS.configure({
-//   fs: "LocalStorage"
-// }, function(e) {
-//   if (e) {
-//     throw e;
-//   }
-// });
 /* ================================================================
  * Cables
  * ================================================================
@@ -138,10 +127,11 @@ async function run() {
   console.debug(`Populating data matrix.`)
   await populateDataMatrix(inputBatch);
   dataMatrixReady = true;
-  console.debug(`Data matrix ready.`)
+  console.debug(`Data matrix ready.`);
+  window.setTimeout(() => {
+    syncopate();
+  }, 1000);
 }
-
-run();
 
 /* ================================================================
  * window.syncopate
@@ -256,6 +246,20 @@ window.playPause = () => {
   }
 };
 
+function stepToTransportTime(step) {
+  /**
+ * Converts a step to a transport time unit.
+ * @param {number} step - [0..31]
+ * @returns {string} - e.g. '2:3:0'
+ * @see https://github.com/Tonejs/Tone.js/wiki/Time
+ */
+  const bars = Math.floor(step / 16);
+  let rest = step % 16;
+  const quarters = Math.floor(rest / 4);
+  const sixteenth = step % 4;
+  return `${bars}:${quarters}:${sixteenth}`;
+}
+
 const part = new Tone.Part(
   (time, value) => {
     Tone.Draw.schedule(function () {
@@ -290,18 +294,5 @@ Tone.Transport.start(0);
 Tone.Transport.bpm.value = 140;
 part.start(0);
 
-/**
- * Converts a step to a transport time unit.
- * @param {number} step - [0..31]
- * @returns {string} - e.g. '2:3:0'
- * @see https://github.com/Tonejs/Tone.js/wiki/Time
- */
-function stepToTransportTime(step) {
-  const bars = Math.floor(step / 16);
-  let rest = step % 16;
-  const quarters = Math.floor(rest / 4);
-  const sixteenth = step % 4;
-  return `${bars}:${quarters}:${sixteenth}`;
-}
-
+run();
 export default {};

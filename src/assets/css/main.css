@@ -138,7 +138,7 @@ a:hover {
 
 /* About dropdown */
 .accordion-body {
-  background-color: #343434 !important;
+  background-color: transparent !important;
   color: #918a7f;
 }
 .accordion-item {
