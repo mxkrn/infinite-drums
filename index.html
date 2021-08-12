@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.8.21/Tone.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/1.2.8/tf.min.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0/es6/core.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0/es6/music_vae.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/d44369ca3b.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  <libs/>
+  <script type="text/javascript" src="./dist/cables/patch.js" async></script>
+  <corelibs/>
+  <script src="./dist/bundle.min.js" async type="module"></script>
   <title>Regroove Demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./src/assets/css/main.css">
@@ -88,7 +89,6 @@
           <img src="./src/assets/img/play-pause.png" class="control-button">
         </button>
       </div>
-      </div>
     </div>
     <div class="bottom-row"></div>
     <!-- <div class="bottom-row">
@@ -99,10 +99,5 @@
     </div>
     <div class="bottom-row"></div>
   </footer>
-
-  <script src="./dist/bundle.min.js" async type="module"></script>
-  <libs/>
-  <script type="text/javascript" src="./dist/cables/patch.js" async></script>
-  <corelibs/>
 </body>
 </html>
