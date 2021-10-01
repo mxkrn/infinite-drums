@@ -4,7 +4,7 @@
 
 🚀 Live Demo - https://app.regroove.io (Works best on Chrome / Firefox on desktop)
 
-Regroove is a drum sequencer web app, sourcing its patterns from the regroove drum machine engine. The engine is a neural network trained on hundreds of hours of drum rhythms played on a 9-piece drum kit. More information on regroove can be found at https://rekoil.io/projects/regroove.
+Regroove is a drum sequencer web app, sourcing its patterns from the regroove drum machine engine. The engine is a neural network trained on hundreds of hours of drum rhythms played on a 9-piece drum kit. More information on regroove can be found at https://rekoil.io/regroove.
 
 
 ### Libraries
